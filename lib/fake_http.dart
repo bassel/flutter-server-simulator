@@ -12,7 +12,7 @@ class FakeHttp {
   // we have 25% chance of failure, 50% chance of delay, 25% chance of perfect connection
   final bool confirmFailure = Random().nextBool();
 
-  FakeHttp(this.delayTime);
+  FakeHttp({this.delayTime = 1});
 
   Future<Response> get(String url, {Map<String, String> headers}) async {
     await _delay();
